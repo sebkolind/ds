@@ -11,5 +11,5 @@ fi
 
 
 if [ "$D_HEADER_META" = true ]; then
-  printf "  ${DIM}Plugins: ${#D_PLUGINS[@]}${R}yoyoyo\n"
+  printf "  ${DIM}Plugins: ${#D_PLUGINS[@]}${R}\n"
 fi
