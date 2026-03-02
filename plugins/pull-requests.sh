@@ -7,9 +7,9 @@ prs=$(gh search prs --author=@me --state=open --json number,title,repository --l
 if [ -z "$prs" ] || [ "$prs" = "[]" ]; then
   empty_state "No open PRs - go ship something!"
 else
-  echo "$prs" | jq -r '.[] | "\(.number)|\(.title)|\(.repository.nameWithOwner)"' 2>/dev/null | while IFS='|' read -r number title nwo; do
-    title=$(echo "$title" | head -c 34)
+  echo "$prs" | jq -r '.[] | "\(.number)|\(.title)|\(.repository.nameWithOwner)"' 2>/dev/null | while IFS='|' read -r key title nwo; do
     repo="${nwo##*/}"
-    printf "  ${BLUE}#%-5s${R} %-34s ${DIM}%s${R}\n" "$number" "$title" "$repo"
+    printf "  %s\n" "$title"
+    printf "  ${BLUE}#%s${R} ${DIM}[%s]${R}\n" "$key" "$repo"
   done
 fi

@@ -26,8 +26,8 @@ if [ -z "$jira_items" ] || [ "$jira_items" = "[]" ]; then
   empty_state "Nothing assigned to you - pick up a ticket!"
 else
   echo "$jira_items" | jq -r '.[] | "\(.key)|\(.fields.summary)|\(.fields.status.name)"' 2>/dev/null | while IFS='|' read -r key summary status; do
-    summary=$(echo "$summary" | head -c 34)
     color=$(get_status_color "$status")
-    printf "  ${BLUE}%-7s${R} %-34s ${color}%b${R}\n" "$key" "$summary" "$status"
+    printf "  %s\n" "$summary"
+    printf "  ${BLUE}%s${R} ${color}%b${R}\n" "$key" "$status"
   done
 fi
