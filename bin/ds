@@ -1,0 +1,19 @@
+#!/bin/bash
+
+D_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/.."
+
+clear
+echo ""
+
+source "${D_DIR}/lib/const.sh"
+source "${D_DIR}/lib/colors.sh"
+source "${D_DIR}/lib/helpers.sh"
+
+source "${D_DIR}/lib/defaults.sh"
+source "${D_DIR}/lib/config.sh"
+
+source "${D_DIR}/lib/header.sh"
+
+source "${D_DIR}/lib/plugins.sh"
+
+source "${D_DIR}/lib/footer.sh"

@@ -11,5 +11,5 @@ curl -fsSL https://raw.githubusercontent.com/sebkolind/dash/main/install.sh | ba
 ## Usage
 
 ```sh
-dash
+ds
 ```
