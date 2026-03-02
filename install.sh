@@ -8,7 +8,7 @@ if [ -d "$INSTALL_DIR" ]; then
   git -C "$INSTALL_DIR" pull
 else
   echo "Installing..."
-  git clone https://github.com/sebkolind/dash "$INSTALL_DIR"
+  git clone https://github.com/sebkolind/ds "$INSTALL_DIR"
 fi
 
 chmod +x "${INSTALL_DIR}/bin/ds"

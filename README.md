@@ -5,7 +5,7 @@ Your personal terminal dashboard.
 ## Install
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/sebkolind/dash/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/sebkolind/ds/main/install.sh | bash
 ```
 
 ## Usage
