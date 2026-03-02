@@ -25,6 +25,8 @@ These are not planned plugins — just ideas.
 
 Show the status of your local Git repos (e.g. a configured list of directories): uncommitted changes, current branch, how far ahead/behind `origin` you are.
 
+✅ **Done**
+
 ### calendar.sh
 
 Some way of showing what's in your calendar today.
