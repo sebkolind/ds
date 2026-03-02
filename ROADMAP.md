@@ -1,10 +1,28 @@
 # Roadmap
 
 - ● Add support for plugins
-  - ○ Configurations
-  - ○ Configure order
+  - ● Configurations
+  - ● Configure order
   - ○ Plugin management
 - ○ Cache if possible to speed up
 - ○ Customizable header
 - ○ Customizable footer
 - ● Implement basic functionality
+
+## Ideas
+
+- ○ Auto-refresh mode. Good if you leave it open in a tmux pane.
+- ○ `ds update` to update the package.
+- ○ Parallel plugin loading
+
+## Plugins
+
+These are not planned plugins — just ideas.
+
+### git.sh
+
+Show the status of your local Git repos (e.g. a configured list of directories): uncommitted changes, current branch, how far ahead/behind `origin` you are.
+
+### calendar.sh
+
+Some way of showing what's in your calendar today.
