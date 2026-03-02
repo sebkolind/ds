@@ -20,9 +20,7 @@ get_status_color() {
   done
 }
 
-acli jira workitem search --jql "assignee = currentUser() AND status in ($statuses)" --fields "key,summary,status" --limit 5 --json 2>/dev/null >"/tmp/dash_jira_items.json" &
-spinner $!
-jira_items=$(cat /tmp/dash_jira_items.json)
+cached_fetch jira_items "/tmp/dash_jira_items.json" "acli jira workitem search --jql \"assignee = currentUser() AND status in ($statuses)\" --fields \"key,summary,status\" --limit 5 --json"
 
 if [ -z "$jira_items" ] || [ "$jira_items" = "[]" ]; then
   empty_state "Nothing assigned to you - pick up a ticket!"
