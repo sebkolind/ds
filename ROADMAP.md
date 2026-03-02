@@ -4,9 +4,9 @@
   - ● Configurations
   - ● Configure order
   - ○ Plugin management
-- ○ Cache if possible to speed up
 - ○ Customizable header
 - ○ Customizable footer
+- ● Cache if possible to speed up
 - ● Implement basic functionality
 
 ## Ideas
