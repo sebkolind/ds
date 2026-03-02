@@ -2,7 +2,9 @@ section "👀  Review Requests"
 
 check_dependencies gh jq
 
-review_prs=$(gh search prs --review-requested=@me --state=open --json number,title,repository,author --limit 5 2>/dev/null)
+gh search prs --review-requested=@me --state=open --json number,title,repository,author --limit 5 2>/dev/null >"/tmp/dash_review_prs.json" &
+spinner $!
+review_prs=$(cat /tmp/dash_review_prs.json)
 
 if [ -z "$review_prs" ] || [ "$review_prs" = "[]" ]; then
   empty_state "No reviews waiting - inbox zero!"
