@@ -1,4 +1,4 @@
-# dash
+# ds
 
 Your personal terminal dashboard.
 
