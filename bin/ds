@@ -1,21 +1,21 @@
 #!/bin/bash
 
-D_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)/.."
+DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)/.."
 
-source "${D_DIR}/lib/commands.sh"
+source "${DIR}/lib/commands.sh"
 
 clear
 echo ""
 
-source "${D_DIR}/lib/const.sh"
-source "${D_DIR}/lib/colors.sh"
-source "${D_DIR}/lib/helpers.sh"
+source "${DIR}/lib/const.sh"
+source "${DIR}/lib/colors.sh"
+source "${DIR}/lib/helpers.sh"
 
-source "${D_DIR}/lib/defaults.sh"
-source "${D_DIR}/lib/config.sh"
+source "${DIR}/lib/defaults.sh"
+source "${DIR}/lib/config.sh"
 
-source "${D_DIR}/lib/header.sh"
+source "${DIR}/lib/header.sh"
 
-source "${D_DIR}/lib/plugins.sh"
+source "${DIR}/lib/plugins.sh"
 
-source "${D_DIR}/lib/footer.sh"
+source "${DIR}/lib/footer.sh"
