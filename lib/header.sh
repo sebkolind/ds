@@ -3,9 +3,9 @@ if [ "$D_HEADER" = false ]; then
 fi
 
 if [ "$D_HEADER_LOGO" = true ]; then
-  echo -e "${BOLD}${MAGENTA}  ┌┬┐┌─┐┌─┐┬ ┬${R}"
-  echo -e "${BOLD}${MAGENTA}   ││├─┤└─┐├─┤${R}"
-  echo -e "${BOLD}${MAGENTA}  ─┴┘┴ ┴└─┘┴ ┴${R}"
+  echo -e "${BOLD}${MAGENTA}  ┌┬┐┌─┐${R}"
+  echo -e "${BOLD}${MAGENTA}   ││└─┐${R}"
+  echo -e "${BOLD}${MAGENTA}  ─┴┘└─┘${R}"
   echo ""
 fi
 
