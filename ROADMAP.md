@@ -14,6 +14,7 @@
 - ○ Auto-refresh mode. Good if you leave it open in a tmux pane.
 - ○ `ds update` to update the package.
 - ○ Parallel plugin loading.
+- ○ Bust cache command.
 - ● Simple plugin TTL caching.
 
 ## Plugins
