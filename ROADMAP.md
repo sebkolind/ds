@@ -12,7 +12,7 @@
 ## Ideas
 
 - ○ Auto-refresh mode. Good if you leave it open in a tmux pane.
-- ○ Parallel plugin loading.
+- ● Parallel plugin loading.
 - ● `ds -u` to update the package.
 - ● Bust cache command.
 - ● Simple plugin TTL caching.

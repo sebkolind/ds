@@ -9,6 +9,8 @@ if [ "$D_HEADER_LOGO" = true ]; then
   echo ""
 fi
 
+echo -e "  ${DIM}$(date '+%A, %B %d · %H:%M')${R}"
+
 if [ "$D_HEADER_META" = true ]; then
   meta="  "
   meta+="${DIM}Plugins:${R} ${BOLD}${CYAN}${#D_PLUGINS[@]}${R}"
