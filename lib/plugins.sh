@@ -64,7 +64,9 @@ done
 
 # Wait for all plugins to finish
 if [[ ${#pids[@]} -gt 0 ]]; then
+  # Start spinner
   (
+    trap 'exit 0' TERM  # Make spinner exit cleanly on SIGTERM
     chars="⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"
     echo ""
     while true; do
@@ -76,11 +78,41 @@ if [[ ${#pids[@]} -gt 0 ]]; then
   ) &
   spinner_pid=$!
 
+  # Cleanup function for spinner and terminal
+  cleanup_and_exit() {
+    # Kill spinner and plugin processes
+    kill "$spinner_pid" 2>/dev/null
+    for pid in "${pids[@]}"; do
+      kill "$pid" 2>/dev/null
+    done
+
+    # Wait for specific processes to finish
+    wait "$spinner_pid" 2>/dev/null || true
+    for pid in "${pids[@]}"; do
+      wait "$pid" 2>/dev/null || true
+    done
+
+    # Clean up temp files
+    for output_file in "${output_files[@]}"; do
+      rm -f "$output_file" 2>/dev/null
+    done
+
+    # Clear terminal output
+    printf "\r\033[K"      # Clear current line (spinner)
+    printf "\033[1A\033[K" # Move up one line and clear it (the empty line)
+
+    exit 130  # Standard exit code for Ctrl-C
+  }
+
+  # Set up trap to cleanup on interrupt
+  trap cleanup_and_exit INT
+
   for pid in "${pids[@]}"; do
     wait "$pid" 2>/dev/null
   done
 
-  # Kill the spinner and clear both lines
+  # Remove trap and cleanup normally
+  trap - INT
   kill "$spinner_pid" 2>/dev/null
   wait "$spinner_pid" 2>/dev/null
   printf "\r\033[K"      # Clear current line (spinner)
